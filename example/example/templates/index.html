@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+
+    <title></title>
+    <style>
+        .news {
+            width: 200px;
+            height: 200px;
+            border-radius: 25px;
+            border: 2px solid grey;
+            padding: 5px;
+        }
+
+        .new {
+            width: 1300px;
+            margin: 5px;
+            display: flex;
+            justify-content:space-between;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <div class="new">
+        {% for item in data %}
+        <div class="news">
+            <p>{{item.id}}</p>
+
+            <h5>{{item.title}}</h5>
+            <p>{{item.body}}</p>
+            <a href="{{ url_for('news',id=item.id) }}"> Xəbəri oxu</a>
+        </div>
+
+        {% endfor %}
+    </div>
+</body>
+</html>
